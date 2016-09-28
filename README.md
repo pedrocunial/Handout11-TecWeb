@@ -25,16 +25,16 @@
 * Rode o projeto!
   - Adicione novas pessoas!
 
-    [http://localhost:8080/\<nome do projeto>/cria]
+    <http://localhost:8080/\<nome do projeto>/cria>
 
   - Modifique usuários já existentes!
   
-    [http://localhost:8080/\<nome do projeto>/atualiza]
+    <http://localhost:8080/\<nome do projeto>/atualiza>
 
   - Remova usuários que não condizem com a maneira com que você vê o mundo!
   
-    [http://localhost:8080/\<nome do projeto>/remove]
+    <http://localhost:8080/\<nome do projeto>/remove>
 
   - Veja a maravilhosa tabela de usuários que você criou!
   
-    [http://localhost:8080/\<nome do projeto>/lista]
+    <http://localhost:8080/\<nome do projeto>/lista>
