@@ -1,6 +1,6 @@
-Entrega semanal para diciplina de Tecnologias Web do 4º semestre de engenharia da computação no Insper.
+## Entrega semanal para diciplina de Tecnologias Web do 4º semestre de engenharia da computação no Insper.
 
-REQUERIMENTOS:
+#### REQUERIMENTOS:
 
 * Java 8
 
@@ -8,7 +8,7 @@ REQUERIMENTOS:
 
 * MariaDB / MySQL
 
-SETUP:
+#### SETUP:
 
 * No console do MariaDB/MySQL crie dentro da sua base de dados escolhida crie a tabela com o seguinte comando:
     ```
