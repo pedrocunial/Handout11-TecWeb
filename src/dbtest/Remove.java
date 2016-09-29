@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/Remove")
+@WebServlet("/remove")
 public class Remove extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
