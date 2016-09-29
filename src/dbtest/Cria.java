@@ -26,6 +26,7 @@ public class Cria extends HttpServlet {
 		out.println("Nome: <input type='text' name='nome'><br>");
 		out.println("Nascimento: <input type='date' name='nascimento'><br>");
 		out.println("Altura: <input type='number' name='altura' step='0.01'><br>");
+		out.println("Passaporte: <input type='text' name='passaporte'><br>");
 		out.println("<input type='submit' value='Submit'>");
 		out.println("</form>");
 		out.println("<body><html>");
@@ -34,14 +35,15 @@ public class Cria extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest request, 
 						  HttpServletResponse response) 
-			throws ServletException, IOException {
+			              throws ServletException, IOException {
 
 		DAO dao = new DAO();
 
 		Pessoas pessoa = new Pessoas();
 		pessoa.setNome(request.getParameter("nome"));   
 		pessoa.setAltura(Double.valueOf(request.getParameter("altura")));
-
+		pessoa.setPassaporte(request.getParameter("passaporte"));
+		
 		String nascimento = request.getParameter("nascimento");
 		Date data = null;
 		try {

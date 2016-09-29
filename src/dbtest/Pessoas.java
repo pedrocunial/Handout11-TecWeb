@@ -6,8 +6,9 @@ public class Pessoas {
 	
 	private Integer id;
 	private String nome;
-	private Calendar nascimento;
+	private String passaporte;
 	private Double altura;
+	private Calendar nascimento;
 
 	public Integer getId() {
 		return id;
@@ -32,6 +33,12 @@ public class Pessoas {
 	}
 	public void setAltura(Double altura) {
 		this.altura = altura;
+	}
+	public String getPassaporte() {
+		return passaporte;
+	}
+	public void setPassaporte(String passaporte) {
+		this.passaporte = passaporte;
 	}
 	
 }

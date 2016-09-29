@@ -38,7 +38,8 @@ public class DAO {
 	
 	public void adiciona(Pessoas pessoa) {
 		String sql = "INSERT INTO Pessoas" + 
-				"(nome, nascimento, altura) values (?, ?, ?)";
+				"(nome, nascimento, altura, passaporte)" + 
+				" values (?, ?, ?, ?)";
 		PreparedStatement stmt;
 		try {
 			stmt = connection.prepareStatement(sql);
@@ -46,6 +47,7 @@ public class DAO {
 			stmt.setDate(2, new Date(
 					pessoa.getNascimento().getTimeInMillis()));
 			stmt.setDouble(3, pessoa.getAltura());
+			stmt.setString(4, pessoa.getPassaporte());
 			stmt.execute();
 			stmt.close();
 		}
@@ -69,6 +71,7 @@ public class DAO {
 				data.setTime(rs.getDate("nascimento"));
 				pessoa.setNascimento(data);
 				pessoa.setAltura(rs.getDouble("altura"));
+				pessoa.setPassaporte(rs.getString("passaporte"));
 				pessoas.add(pessoa);
 				rs.close();
 				stmt.close();
@@ -83,14 +86,15 @@ public class DAO {
 	
 	public void altera(Pessoas pessoa) {
 		String sql = "UPDATE Pessoas SET" +
-					"nome=?, nascimento=?, altura=? WHERE id=?";
+					"nome=?, nascimento=?, altura=?, passaporte=? WHERE id=?";
 		try {
 			PreparedStatement stmt = connection.prepareStatement(sql);
-			stmt.setString(1,  pessoa.getNome());
-			stmt.setDate(2,  new Date(
+			stmt.setString(1, pessoa.getNome());
+			stmt.setDate(2, new Date(
 					pessoa.getNascimento().getTimeInMillis()));
 			stmt.setDouble(3, pessoa.getAltura());
 			stmt.setInt(4, pessoa.getId());			
+			stmt.setString(5, pessoa.getPassaporte());
 			stmt.execute();
 			stmt.close();
 		} catch(SQLException e) {

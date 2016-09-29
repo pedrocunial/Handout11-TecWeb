@@ -13,7 +13,9 @@ import javax.servlet.http.HttpServletResponse;
 public class Remove extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request,
+			               HttpServletResponse response)
+			               throws ServletException, IOException {
 		PrintWriter out = response.getWriter();
 		out.println("<html><body>");
 		out.println("<form method='post'>");
@@ -23,7 +25,9 @@ public class Remove extends HttpServlet {
 		out.println("<body><html>");
 	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request,
+			                HttpServletResponse response)
+			                throws ServletException, IOException {
 		DAO dao = new DAO();		
 		dao.remove(Integer.valueOf(request.getParameter("id")));
 

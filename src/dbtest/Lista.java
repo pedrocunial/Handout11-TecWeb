@@ -21,13 +21,13 @@ public class Lista extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		out.println("<html><body><table border='1'>");
 		out.println("<tr><td>ID</td><td>Nome</td>" +
-				"<td>Nascimento</td><td>Altura</td></tr>");
+				"<td>Nascimento</td><td>Altura</td><td>Passaporte</td></tr>");
 		for(Pessoas pessoa : pessoas) {
 			out.println("<tr><td>" + pessoa.getId() + "</td>");
 			out.println("<td>" + pessoa.getNome() + "</td>");
-			out.println("<td>" + pessoa.getNascimento().getTime() +
-					"</td>");
-			out.println("<td>" + pessoa.getAltura() + "</td></tr>");
+			out.println("<td>" + pessoa.getNascimento().getTime() + "</td>");
+			out.println("<td>" + pessoa.getAltura() + "</td>");
+			out.println("<td>" + pessoa.getPassaporte() + "</td></tr>");
 		}
 		out.println("</table></body></html>");
 		dao.close();	
