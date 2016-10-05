@@ -13,17 +13,17 @@
 ### SETUP:
 
 * No console do MariaDB/MySQL crie dentro da sua base de dados escolhida crie a tabela com o seguinte comando:
-    ```sql
-    CREATE TABLE Pessoas (
-    id INT NOT NULL AUTO_INCREMENT,
-    nome VARCHAR(32) NOT NULL,
-    altura DECIMAL (2, 1),
-    nascimento DATE,
-    passaporte VARCHAR(60),
-    PRIMARY KEY (id) );
-    ```
+```sql
+CREATE TABLE Pessoas (
+id INT NOT NULL AUTO_INCREMENT,
+nome VARCHAR(32) NOT NULL,
+altura DECIMAL (2, 1),
+nascimento DATE,
+passaporte VARCHAR(60),
+PRIMARY KEY (id) );
+```
 
-#### Modifique as variáveis da base de dados no arquivo DAO.java para que condizam com as do seu sistema
+#### Modifique as variáveis da base de dados no arquivo DAO.java para que condizam com as do seu sistema!
 
 #### Rode o projeto!
   - Adicione novas pessoas!
