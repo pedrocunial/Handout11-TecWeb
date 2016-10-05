@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 
 @WebServlet("/atualiza")
 public class Atualiza extends HttpServlet {
-	
+
 	protected void doGet(HttpServletRequest request,
 			               HttpServletResponse response)
 			               throws ServletException, IOException {
@@ -36,14 +36,14 @@ public class Atualiza extends HttpServlet {
 	protected void doPost(HttpServletRequest request,
 			                HttpServletResponse response)
 			                throws ServletException, IOException {
-		DAO dao = new DAO();		
+		DAO dao = new DAO();
 		Pessoas pessoa = new Pessoas();
 
 		pessoa.setId(Integer.valueOf(request.getParameter("id")));
 		pessoa.setNome(request.getParameter("nome"));
 		pessoa.setAltura(Double.valueOf(request.getParameter("altura")));
 		pessoa.setPassaporte(request.getParameter("passaporte"));
-		
+
 		String nascimento = request.getParameter("nascimento");
 		try {
 			Date data = new SimpleDateFormat("yyyy-MM-dd").parse(nascimento);
@@ -53,14 +53,14 @@ public class Atualiza extends HttpServlet {
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
-		
+
 		dao.altera(pessoa);
-		
+
 		PrintWriter out = response.getWriter();
-		out.println("<html><body>");
+    out.println("<html><body>");
 		out.println("atualizado" + pessoa.getNome());
 		out.println("</body></html>");
-		
+
 		dao.close();
 	}
 }

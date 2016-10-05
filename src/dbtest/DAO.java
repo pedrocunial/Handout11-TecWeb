@@ -73,9 +73,9 @@ public class DAO {
 				pessoa.setAltura(rs.getDouble("altura"));
 				pessoa.setPassaporte(rs.getString("passaporte"));
 				pessoas.add(pessoa);
-				rs.close();
-				stmt.close();
 			}
+			rs.close();
+			stmt.close();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

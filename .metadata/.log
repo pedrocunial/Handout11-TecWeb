@@ -1,0 +1,16 @@
+!SESSION 2016-10-05 10:15:06.449 -----------------------------------------------
+eclipse.buildId=4.6.0.I20160606-1100
+java.version=1.8.0_102
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  --launcher.suppressErrors -refresh -application org.eclim.application
+Command-line arguments:  --launcher.suppressErrors -debug -clean -refresh -application org.eclim.application
+
+!ENTRY org.eclipse.oomph.setup.ui 2 0 2016-10-05 10:15:20.724
+!MESSAGE java.lang.NullPointerException
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.oomph.setup.ui.SetupUIPlugin.performStartup(SetupUIPlugin.java:379)
+	at org.eclipse.oomph.setup.ui.SetupUIPlugin.access$4(SetupUIPlugin.java:350)
+	at org.eclipse.oomph.setup.ui.SetupUIPlugin$1$1.run(SetupUIPlugin.java:247)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
