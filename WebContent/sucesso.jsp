@@ -34,7 +34,7 @@ pessoa.setNascimento(dataNascimento);
 dao.adiciona(pessoa);
 %>
 
-adicionado ${ pessoa.nome }
+adicionado ${ param.nome }
 
 <% dao.close(); %>
 
