@@ -86,15 +86,15 @@ public class DAO {
 	
 	public void altera(Pessoas pessoa) {
 		String sql = "UPDATE Pessoas SET" +
-					"nome=?, nascimento=?, altura=?, passaporte=? WHERE id=?";
+					" nome=?, nascimento=?, altura=?, passaporte=? WHERE id=?";
 		try {
 			PreparedStatement stmt = connection.prepareStatement(sql);
 			stmt.setString(1, pessoa.getNome());
 			stmt.setDate(2, new Date(
 					pessoa.getNascimento().getTimeInMillis()));
 			stmt.setDouble(3, pessoa.getAltura());
-			stmt.setInt(4, pessoa.getId());			
-			stmt.setString(5, pessoa.getPassaporte());
+			stmt.setString(4, pessoa.getPassaporte());
+			stmt.setInt(5, pessoa.getId());			
 			stmt.execute();
 			stmt.close();
 		} catch(SQLException e) {

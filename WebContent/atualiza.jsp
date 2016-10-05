@@ -12,6 +12,7 @@
 	Nome: <input type='text' name='nome'><br>
 	Nascimento: <input type='date' name='nascimento'><br>
 	Altura: <input type='number' name='altura' step='0.01'><br>
+	Passaporte: <input type='text' name='passaporte'><br>
 	<input type='submit' value='Submit'>
 </form>
 </body>
