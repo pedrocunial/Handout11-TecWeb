@@ -23,9 +23,9 @@ passaporte VARCHAR(60),
 PRIMARY KEY (id) );
 ```
 
-#### Modifique as variáveis da base de dados no arquivo DAO.java para que condizam com as do seu sistema!
+* Modifique as variáveis da base de dados no arquivo DAO.java para que condizam com as do seu sistema!
 
-#### Rode o projeto!
+### Rode o projeto!
   - Adicione novas pessoas!
 
     http://localhost:8080/\<nome do projeto>/cria.jsp
