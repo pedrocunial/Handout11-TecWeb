@@ -51,7 +51,7 @@
 		</tr>
 		<c:forEach var="pessoa" items="${ dao.lista }" varStatus="id">
 			<tr bgcolor="#${ id.count % 2 == 0 ? 'bbffff' : 'ffffbb'}">
-				<td>${ id.count }</td>
+				<td>${ pessoa.id }</td>
 				<td>${ pessoa.nome }</td>
 				<td>
 					<fmt:formatDate

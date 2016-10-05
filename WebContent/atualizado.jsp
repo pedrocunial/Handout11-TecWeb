@@ -13,26 +13,28 @@
 <body>
 <%@ page import='java.util.*, dbtest.*, java.text.*' %>
 <% 
-	DAO dao = new DAO(); 
+	DAO dao = new DAO();
 	Pessoas pessoa = new Pessoas();
+	
+	pessoa.setId(Integer.valueOf(request.getParameter("id")));
 	pessoa.setNome(request.getParameter("nome"));
 	pessoa.setAltura(Double.valueOf(request.getParameter("altura")));
 	pessoa.setPassaporte(request.getParameter("passaporte"));
-
 	String nascimento = request.getParameter("nascimento");
 	Date data = null;
 	try {
 		data = new SimpleDateFormat("yyyy-MM-dd").parse(nascimento);
+		Calendar dataNascimento = Calendar.getInstance();
+		dataNascimento.setTime(data);
+		pessoa.setNascimento(dataNascimento);
 	} catch (ParseException e) {
 		e.printStackTrace();
 	}
-	Calendar dataNascimento = Calendar.getInstance();
-	dataNascimento.setTime(data);
-	pessoa.setNascimento(dataNascimento);
-
-	dao.adiciona(pessoa);
+	dao.altera(pessoa);
 %>
-adicionado ${ param.nome }
+Atualizado ${ param.nome }
 <% dao.close(); %>
+
+
 </body>
 </html>

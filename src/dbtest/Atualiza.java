@@ -57,7 +57,7 @@ public class Atualiza extends HttpServlet {
 		dao.altera(pessoa);
 
 		PrintWriter out = response.getWriter();
-    out.println("<html><body>");
+		out.println("<html><body>");
 		out.println("atualizado" + pessoa.getNome());
 		out.println("</body></html>");
 
