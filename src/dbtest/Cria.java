@@ -19,8 +19,8 @@ public class Cria extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	@Override
-	protected void doGet(HttpServletRequest request, 
-						 HttpServletResponse response) 
+	protected void doGet(HttpServletRequest request,
+						 HttpServletResponse response)
 						 throws ServletException, IOException {
 		PrintWriter out = response.getWriter();
 		out.println("<html><body>");
@@ -35,17 +35,17 @@ public class Cria extends HttpServlet {
 	}
 
 	@Override
-	protected void doPost(HttpServletRequest request, 
-						  HttpServletResponse response) 
+	protected void doPost(HttpServletRequest request,
+						  HttpServletResponse response)
 			              throws ServletException, IOException {
 
 		DAO dao = new DAO();
 
 		Pessoas pessoa = new Pessoas();
-		pessoa.setNome(request.getParameter("nome"));   
+		pessoa.setNome(request.getParameter("nome"));
 		pessoa.setAltura(Double.valueOf(request.getParameter("altura")));
 		pessoa.setPassaporte(request.getParameter("passaporte"));
-		
+
 		String nascimento = request.getParameter("nascimento");
 		Date data = null;
 		try {
@@ -56,16 +56,16 @@ public class Cria extends HttpServlet {
 		Calendar dataNascimento = Calendar.getInstance();
 		dataNascimento.setTime(data);
 		pessoa.setNascimento(dataNascimento);
-		
+
 		dao.adiciona(pessoa);
-		
+
 		PrintWriter out = response.getWriter();
 		out.println("<html><body>");
 		out.println("adicionado" + pessoa.getNome());
 		out.println("</body></html>");
-		
+
 		dao.close();
-	} 
+	}
 }
 
 

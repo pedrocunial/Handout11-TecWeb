@@ -11,9 +11,9 @@ import java.util.ArrayList;
 import java.util.Calendar;
 
 public class DAO {
-	
+
 	private Connection connection = null;
-	
+
 	// Database variables 
 	public static final String DATABASE = "jabuti";
 	public static final String IP = "localhost";
@@ -35,7 +35,7 @@ public class DAO {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public void adiciona(Pessoas pessoa) {
 		String sql = "INSERT INTO Pessoas" + 
 				"(nome, nascimento, altura, passaporte)" + 
@@ -56,7 +56,7 @@ public class DAO {
 			e.printStackTrace();
 		}  
 	}
-	
+
 	public List<Pessoas> getLista() {
 		List<Pessoas> pessoas = new ArrayList<Pessoas>();
 		try {
@@ -82,11 +82,11 @@ public class DAO {
 		}
 		return pessoas;
 	}
-		
-	
+
+
 	public void altera(Pessoas pessoa) {
 		String sql = "UPDATE Pessoas SET" +
-					" nome=?, nascimento=?, altura=?, passaporte=? WHERE id=?";
+				" nome=?, nascimento=?, altura=?, passaporte=? WHERE id=?";
 		try {
 			PreparedStatement stmt = connection.prepareStatement(sql);
 			stmt.setString(1, pessoa.getNome());
@@ -97,7 +97,7 @@ public class DAO {
 			stmt.setInt(5, pessoa.getId());			
 			stmt.execute();
 			stmt.close();
-		} catch(SQLException e) {
+		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 	}
